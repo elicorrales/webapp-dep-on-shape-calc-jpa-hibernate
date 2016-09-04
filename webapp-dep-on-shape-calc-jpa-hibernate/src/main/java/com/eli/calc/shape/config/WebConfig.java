@@ -19,6 +19,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		
+		System.err.println("\n\n\n\nELI: Web Config\n\n\n\n");
+
 		//index page mapping
 		// "/" -> index.jsp
 		registry.addViewController("/").setViewName("index");
@@ -29,13 +31,17 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**")
-		.addResourceLocations("/resources/");
+
+		System.err.println("\n\n\n\nELI: Web Config\n\n\n\n");
+
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 
 
 	@Bean
 	public InternalResourceViewResolver viewResolver() {//<--if i use this one (subclass), i dont get an error
+
+		System.err.println("\n\n\n\nELI: Web Config\n\n\n\n");
 
 		//UrlBasedViewResolver viewResolver = new UrlBasedViewResolver();
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
