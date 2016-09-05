@@ -101,7 +101,7 @@ public class RequestResultController {
     	this.calculator.runAllPendingRequestsNoStopOnError();
 
     	//Map<CalculationRequest,CalculationResult> results = this.calculator.getShapeCalculationResults();
-    	List<CalculationResult> results = this.calculator.getAllCalculationResults();
+    	List<CalculationResult> results = this.calculator.getAllCalculatedResults();
 
 		if (null==results || results.isEmpty()) {
 			return new ModelAndView("Results","message", "There are NO Results Yet");
@@ -123,7 +123,7 @@ public class RequestResultController {
     	this.calculator.deleteAllResults();
 
     	//Map<CalculationRequest,CalculationResult> results = this.calculator.getShapeCalculationResults();
-    	List<CalculationResult> results = this.calculator.getAllCalculationResults();
+    	List<CalculationResult> results = this.calculator.getAllCalculatedResults();
 
 		if (null==results || results.isEmpty()) {
 			return new ModelAndView("Results","message", "There are NO Results Yet");
